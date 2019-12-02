@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class UpgradeView : MonoBehaviour
+public class UpgradeView : MonoBehaviour
 {
     private static readonly int upgradeTriggerHash = Animator.StringToHash("Upgrade");
     private static readonly int availableUpgradeBooleanHash = Animator.StringToHash("UpgradeAvailable");
+
+    public delegate void OnViewInteractionDelegate();
+    public event OnViewInteractionDelegate OnViewInteraction;
 
     [SerializeField]
     protected Animator viewAnimator;
@@ -12,6 +15,12 @@ public abstract class UpgradeView : MonoBehaviour
     protected Text upgradeText;
     [SerializeField]
     protected Text detailsText;
+
+    //Triggered by UI OnClick-Callback
+    public void OnUIButtonClicked()
+    {
+        OnViewInteraction?.Invoke();
+    }
 
     public void PlayUpgradeAnimation()
     {

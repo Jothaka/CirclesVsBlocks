@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private double availableGold;
-
     [Header("References")]
     [SerializeField]
     private GoldView goldView;
     [SerializeField]
     private CircleView[] CircleViews;
     [SerializeField]
-    private TapView tapView;
+    private UpgradeView tapView;
+    [SerializeField]
+    private BlockView blockView;
 
     [Header("Settings")]
     [SerializeField]
@@ -23,22 +22,26 @@ public class GameController : MonoBehaviour
     private List<CircleController> circleControllers;
     private TapController tapController;
 
+    private GoldController goldController;
+
     //TODO: Get scaleData from remote
     void Start()
     {
+        goldController = GoldController.Instance;
+        goldController.SetGoldView(goldView);
         goldgeneratorControllers = new List<GoldGeneratorController>();
         circleControllers = new List<CircleController>(CircleViews.Length);
-        
+
         for (int i = 0; i < CircleViews.Length; i++)
         {
-            CircleController controller = new CircleController(CircleViews[i], scaleData, OnGoldGenerated);
+            CircleController controller = new CircleController(CircleViews[i], scaleData, goldController.ChangeGoldValue);
             controller.OnPurchased += OnCirclePurchased;
             circleControllers.Add(controller);
         }
 
         goldgeneratorControllers.AddRange(circleControllers);
 
-        tapController = new TapController(tapView, scaleData, OnGoldGenerated);
+        tapController = new TapController(tapView, blockView, scaleData, goldController.ChangeGoldValue);
 
         goldgeneratorControllers.Add(tapController);
     }
@@ -46,43 +49,10 @@ public class GameController : MonoBehaviour
     void Update()
     {
         for (int i = 0; i < goldgeneratorControllers.Count; i++)
-            goldgeneratorControllers[i].UpdateGoldgenerator(availableGold);
+            goldgeneratorControllers[i].UpdateGoldgenerator(goldController.AvailableGold);
     }
 
-    //Triggered by UI OnClick-Callback
-    public void OnBlockTapped()
-    {
-        tapController.OnBlockTapped();
-    }
-
-    //Triggered by UI OnClick-Callback
-    public void OnCircleUpgradeTapped(int circleID)
-    {
-        UpgradeController(circleControllers[circleID]);
-    }
-
-    //Triggered by UI OnClick-Callback
-    public void OnTapUpgradeTapped()
-    {
-        UpgradeController(tapController);
-    }
-
-    private void UpgradeController(GoldGeneratorController controller)
-    {
-        if (availableGold >= controller.NextUpgradeCost)
-        {
-            availableGold -= controller.NextUpgradeCost;
-            goldView.SetGoldText(availableGold.FormatForUI());
-            controller.UpgradeGoldGenerator();
-        }
-    }
-
-    private void OnGoldGenerated(double goldGained)
-    {
-        availableGold += goldGained;
-        goldView.SetGoldText(availableGold.FormatForUI());
-    }
-
+    //Increase Initial Costs of all non-purchased Circles when a new circle is purchased
     private void OnCirclePurchased()
     {
         for (int i = 0; i < circleControllers.Count; i++)

@@ -10,12 +10,11 @@ public class CircleController : GoldGeneratorController
 
     private float timeSinceLastAttack;
 
-    public CircleController(CircleView circleView, ScaleData scaleData, GoldGeneratedDelegate onCircleAttacks)
+    public CircleController(CircleView circleView, ScaleData scaleData, GoldGeneratorDelegate onCircleAttacks)
     {
         initialCost = 100;
         initialGoldPerAttack = 0;
         InitializeController(circleView, scaleData, onCircleAttacks);
-        UpdateViewText();
     }
 
     public override void UpdateGoldgenerator(double availableGold)
@@ -27,7 +26,7 @@ public class CircleController : GoldGeneratorController
         if (timeSinceLastAttack >= AttackDelay)
         {
             timeSinceLastAttack = 0;
-            InvokeOnGoldGenerated();
+            GenerateGold();
             var circleView = view as CircleView;
             circleView.PlayAttackAnimation();
         }
@@ -47,13 +46,18 @@ public class CircleController : GoldGeneratorController
 
     public override void UpgradeGoldGenerator()
     {
-        if (UpgradeLevel == 0)
-            ConfirmPurchase();
-        else
-            view.PlayUpgradeAnimation();
+        if (GoldController.Instance.AvailableGold >= NextUpgradeCost)
+        {
+            PayUpgrade();
 
-        IncreaseGoldGeneratorLevel();
-        UpdateViewText();
+            if (UpgradeLevel == 0)
+                ConfirmPurchase();
+            else
+                view.PlayUpgradeAnimation();
+
+            IncreaseGoldGeneratorLevel();
+            UpdateViewText();
+        }
     }
 
     private void ConfirmPurchase()

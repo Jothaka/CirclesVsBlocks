@@ -2,11 +2,15 @@
 
 public class TapController : GoldGeneratorController
 {
-    public TapController(UpgradeView tapView, ScaleData scaleData, GoldGeneratedDelegate onTapAttack)
+    private BlockView blockView;
+
+    public TapController(UpgradeView tapView, BlockView blockView, ScaleData scaleData, GoldGeneratorDelegate onTapAttack)
     {
         initialCost = scaleData.UpgradeCostMultiplier * Math.Pow(scaleData.UpgradeCostPowed, UpgradeLevel);
         initialGoldPerAttack = 1;
         InitializeController(tapView, scaleData, onTapAttack);
+        this.blockView = blockView;
+        this.blockView.OnViewInteraction += OnBlockTapped;
     }
 
     public override void UpdateGoldgenerator(double availableGold)
@@ -16,7 +20,8 @@ public class TapController : GoldGeneratorController
 
     public void OnBlockTapped()
     {
-        InvokeOnGoldGenerated();
+        GenerateGold();
+        blockView.PlayAttackAnimation();
     }
 
     protected override void UpdateDetailsText()

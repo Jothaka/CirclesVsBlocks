@@ -701,8 +701,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1968195637}
-        m_MethodName: OnTapUpgradeTapped
+      - m_Target: {fileID: 750252403}
+        m_MethodName: OnUIButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 750252397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc24eee382b0afe4b9d79004ba77526b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a42b3351b9d08b408f5fac002467d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   viewAnimator: {fileID: 750252402}
@@ -962,41 +962,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1968195637}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnCircleUpgradeTapped
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd2d34a616f07d42b11953801dd59a9, type: 3}
 --- !u!224 &976156119 stripped
@@ -1101,19 +1066,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1968195637}
-        m_MethodName: OnBlockTapped
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1131667006}
-        m_MethodName: PlayAttackAnimationOnTapped
+        m_MethodName: OnUIButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1484,41 +1438,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1968195637}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnCircleUpgradeTapped
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd2d34a616f07d42b11953801dd59a9, type: 3}
 --- !u!224 &1494413507 stripped
@@ -1723,41 +1642,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1968195637}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnCircleUpgradeTapped
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd2d34a616f07d42b11953801dd59a9, type: 3}
 --- !u!224 &1593650109 stripped
@@ -1815,6 +1699,7 @@ MonoBehaviour:
   - {fileID: 1593650110}
   - {fileID: 976156120}
   tapView: {fileID: 750252403}
+  blockView: {fileID: 1131667006}
   scaleData:
     GoldPerTapMultiplier: 5
     GoldPerTapPow: 2.1
@@ -1940,41 +1825,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1968195637}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnCircleUpgradeTapped
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd2d34a616f07d42b11953801dd59a9, type: 3}
@@ -2185,36 +2035,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1968195637}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnCircleUpgradeTapped
-      objectReference: {fileID: 0}
-    - target: {fileID: 7696986931180041824, guid: bdd2d34a616f07d42b11953801dd59a9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd2d34a616f07d42b11953801dd59a9, type: 3}
